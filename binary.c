@@ -19,7 +19,7 @@ return total;
 
 void decimal_to_binary(int n) {
     // Array to store binary digits
-    char binaryNum[32];
+    //char binaryNum[33];
     int counter = 0;
     
     while (pow(2, counter) <= n) {
@@ -28,6 +28,7 @@ void decimal_to_binary(int n) {
     counter = counter - 1;
 
     int i = 0;
+    char binaryNum[counter+1];
     while (counter >= 0) {
         int y = pow(2, counter);
         if (y <= n) {
@@ -39,7 +40,7 @@ void decimal_to_binary(int n) {
         counter = counter - 1;
         i = i + 1;
     }
-    binaryNum[i] = '\0';  // Null-terminate the string
+    binaryNum[counter] = '\0';  // Null-terminate the string
 
     printf("%s", binaryNum);
 }
